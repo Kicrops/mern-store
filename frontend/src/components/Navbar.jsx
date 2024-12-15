@@ -5,7 +5,7 @@ import { LuSun } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const { colorMode, toggleColorMode } = useColorMode();
+	const { colorMode, toggleColorMode } = useColorMode();
 
 	return (
 		<Container maxW={"1140px"} px={4}>
@@ -17,11 +17,9 @@ const Navbar = () => {
 					<Link to={"/create"}>
 						<Button>
 							<FiPlusSquare />
-                        </Button>
+						</Button>
 					</Link>
-					<Button onClick={toggleColorMode}>
-                        {colorMode === "light" ? <IoMoon /> : <LuSun />}
-                    </Button>
+					<Button onClick={toggleColorMode}>{colorMode === "light" ? <IoMoon /> : <LuSun />}</Button>
 				</HStack>
 			</Flex>
 		</Container>

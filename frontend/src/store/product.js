@@ -43,9 +43,7 @@ export const useProductStore = create((set) => ({
 		const data = await res.json();
 		if (!data.success) return { success: false, message: data.message };
 		set((state) => ({
-			products: state.products.map((product) =>
-				product._id === productId ? data.data : product
-			),
+			products: state.products.map((product) => (product._id === productId ? data.data : product)),
 		}));
 		return { success: true, message: "Product edited succesfully." };
 	},
